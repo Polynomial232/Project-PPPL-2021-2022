@@ -22,10 +22,10 @@
 	}
 	
 	if($section == 'produk'){
-		$q = mysqli_query($conn, "DELETE FROM `produk` WHERE `idproduk` = '$i'");
+		$q = mysqli_query($conn, "DELETE FROM `produk` WHERE `idproduk` = '$id'");
 		echo $i;
 		if($q){
-			//header('location: produk.php');
+			header('location: produk.php');
 		}
 	}
 	

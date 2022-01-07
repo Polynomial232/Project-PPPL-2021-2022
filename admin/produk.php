@@ -9,13 +9,13 @@
 		$rate=0;
 		$hargabefore=$_POST['hargabefore'];
 		$hargaafter=$_POST['hargaafter'];
-		if($hargaafter == 0){
-			$hargaafter == $hargabefore;
+		if($hargaafter == 0 || $hargaafter == NULL){
+			$hargaafter = $hargabefore;
 		}
-		
 		$nama_file = $_FILES['uploadgambar']['name'];
 		$ext = pathinfo($nama_file, PATHINFO_EXTENSION);
-		$random = crypt($nama_file, time());
+		$random = str_replace("/", "",crypt($nama_file, time()));
+
 		$ukuran_file = $_FILES['uploadgambar']['size'];
 		$tipe_file = $_FILES['uploadgambar']['type'];
 		$tmp_file = $_FILES['uploadgambar']['tmp_name'];
@@ -33,27 +33,27 @@
 			  
 			  if($sql){ 
 				
-				echo "<br><meta http-equiv='refresh' content='5; URL=produk.php'> You will be redirected to the form in 5 seconds";
+				echo "<br><meta http-equiv='refresh' content='1; URL=produk.php'> You will be redirected to the form in 5 seconds";
 					
 			  }else{
 				// Jika Gagal, Lakukan :
 				echo "Sorry, there's a problem while submitting.";
-				echo "<br><meta http-equiv='refresh' content='5; URL=produk.php'> You will be redirected to the form in 5 seconds";
+				echo "<br><meta http-equiv='refresh' content='1; URL=produk.php'> You will be redirected to the form in 5 seconds";
 			  }
 			}else{
 			  // Jika gambar gagal diupload, Lakukan :
 			  echo "Sorry, there's a problem while uploading the file.";
-			  echo "<br><meta http-equiv='refresh' content='5; URL=produk.php'> You will be redirected to the form in 5 seconds";
+			  echo "<br><meta http-equiv='refresh' content='1; URL=produk.php'> You will be redirected to the form in 5 seconds";
 			}
 		  }else{
 			// Jika ukuran file lebih dari 1MB, lakukan :
 			echo "Sorry, the file size is not allowed to more than 1mb";
-			echo "<br><meta http-equiv='refresh' content='5; URL=produk.php'> You will be redirected to the form in 5 seconds";
+			echo "<br><meta http-equiv='refresh' content='1; URL=produk.php'> You will be redirected to the form in 5 seconds";
 		  }
 		}else{
 		  // Jika tipe file yang diupload bukan JPG / JPEG / PNG, lakukan :
 		  echo "Sorry, the image format should be JPG/PNG.";
-		  echo "<br><meta http-equiv='refresh' content='5; URL=produk.php'> You will be redirected to the form in 5 seconds";
+		  echo "<br><meta http-equiv='refresh' content='1; URL=produk.php'> You will be redirected to the form in 5 seconds";
 		}
 	
 	};
@@ -220,14 +220,14 @@
 													<td style="width: 10%" ><img src="../<?php echo $p['gambar'] ?>"/></td>
 													<td><?php echo $p['namaproduk'] ?></td>
 													<td><?php echo $p['namakategori'] ?></td>
-													<td><?php echo $p['hargaafter'] ?></td>
+													<td>Rp <?php echo number_format($p['hargaafter']) ?></td>
 													<td><?php echo $p['deskripsi'] ?></td>
 													<td><?php echo $p['rate'] ?></td>
-													<td><?php echo $p['hargabefore'] ?></td>
+													<td>Rp <?php echo number_format($p['hargabefore']) ?></td>
 													<td><?php echo $p['tgldibuat'] ?></td>
 													<td>
-														<a href="edit.php?id=pro<?= $p['idproduk'] ?>" class="btn btn-warning">Edit</a>
-														<a href="delete.php?id=pro<?= $p['idproduk'] ?>" class="btn btn-danger">Delete</a>
+														<a href="edit.php?id=<?= $p['idproduk'] ?>&section=produk" class="btn btn-warning">Edit</a>
+														<a href="delete.php?id=<?= $p['idproduk'] ?>&section=produk" class="btn btn-danger">Delete</a>
 													</td>
 												</tr>
 												<?php 
