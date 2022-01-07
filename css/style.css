@@ -1,0 +1,167 @@
+*{
+    font-family: 'Ruluko', sans-serif;
+}
+section{
+    margin: 6em auto;
+}
+#kontak .btn-primary{
+    background-color: #072A46;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+#menu-baru .btn-primary,
+#keranjang .btn-primary{
+    background-color: #072A46;
+    border-radius: 0;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.3em 1.5em;
+}
+#main h1{
+    font-family: 'Bubblegum Sans', cursive;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 80px;
+    text-shadow: 2px 2px rgb(196, 196, 196);
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-transform: uppercase;
+    z-index: 1;
+}
+#main .col-md-6{
+    position: relative;
+}
+#main a:hover>img{
+    transform: scale(1.02);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+#menu-baru{
+    color: #072A46;
+    text-align: center;
+}
+#menu-baru h1{
+    font-size: 3em;
+    position: relative;
+}
+#menu-baru h1::before{
+    content: '';
+    position: absolute;
+    background: #072A46;
+    bottom: -10%;
+    left: 39%;
+    width: 100px;
+    height: 5px;
+}
+.carousel-caption h5,
+.carousel-caption p,
+#menu-baru{
+    font-family: 'Ruluko', sans-serif;
+}
+.nav a{
+    font-family: 'Ruluko', sans-serif;
+    font-size: 16px;
+    color: #072A46;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid transparent;
+}
+.nav li{
+    padding-right: 30px;
+}
+.nav li a:hover,
+.nav li a.active{
+    color: #072A46;
+    border-bottom: 3px solid #072A46;
+}
+.nav li .navbar-brand:hover {
+    color: #072A46;
+    border-bottom: 1px transparent solid;
+}
+.nav{
+    padding: 0 2em;
+    background-color: #EEF8F3;
+}
+
+#metode{
+    background-color: #EEF8F3;
+    padding: 3em 5em;
+}
+#metode h2{
+    font-weight: 400;
+}
+#kontak a{
+    color: #072A46;
+    text-decoration: none;
+    font-size: 25px;
+}
+footer{
+    background-color: #072A46;
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+#menu,
+#Konfimasi,
+#keranjang{
+    margin-top: 2.5em;
+    font-family: 'Ruluko', sans-serif;
+    margin-bottom: 10em;
+}
+#menu h1,
+#Konfimasi h1{
+    font-size: 60px;
+}
+#menu span{
+    font-size: 1.2em;
+    color: #554C4C;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+a:hover > img {
+    transform: scale(1.02);
+    transition: .3s ease-in-out;
+}
+.wa{
+    z-index: 100;
+    width: 10em;
+    bottom: 1em;
+    right: 1.5em;
+}
+.ig{
+    z-index: 100;
+    width: 10em;
+    bottom: 5em;
+    right: 1.5em;
+}
+.ig a{
+    color: #DD2A7B;
+}
+.bg-color{
+    background: #EEF8F3;
+    border-radius: 5px;
+    border: 2px solid lightgray
+}
+a:hover>.bg-color{
+    transform: scale(1.05);
+    transition: .3s ease-in-out;
+}
+
+@media only screen and (max-width: 900px) {
+    .nav li .navbar-brand{
+        display: none;
+    }
+
+    #main h1{
+        font-size: 4em;
+    }
+}
